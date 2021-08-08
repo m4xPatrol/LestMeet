@@ -3,6 +3,8 @@ from .models import EventClass
 
 
 class EventDetailSerializer(serializers.ModelSerializer):
+    user = serializers.HiddenField(default=serializers.CurrentUserDefault())
+
     class Meta:
         model = EventClass
         fields = '__all__'

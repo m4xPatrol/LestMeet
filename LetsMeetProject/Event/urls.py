@@ -7,4 +7,5 @@ urlpatterns = [
     path('all/', EventsListView.as_view()),
     path('event/detail/<int:pk>/', EventDetailView.as_view()),
 
+
 ]

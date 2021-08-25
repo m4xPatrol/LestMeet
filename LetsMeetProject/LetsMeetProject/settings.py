@@ -26,13 +26,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-REST_FRAMEWORK = {
-    'DEFAULT_AUTHENMTIFICATION_CLASSES': (
-        'rest_framework.authentification.TokenAuthentification',
-        'rest_framework.authentification.BaseAuthentification',
-        'rest_framework.authentification.SessionAuthentification',
-    )
-}
 # Application definition
 
 INSTALLED_APPS = [
@@ -45,8 +38,8 @@ INSTALLED_APPS = [
 
     'rest_framework',
     'rest_framework.authtoken',
-    'Event',
     'djoser',
+    'Event',
 ]
 
 MIDDLEWARE = [
@@ -60,6 +53,14 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'LetsMeetProject.urls'
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+        # 'rest_framework.authentication.BaseAuthentication',
+        # 'rest_framework.authentication.SessionAuthentication',
+    )
+}
 
 TEMPLATES = [
     {
